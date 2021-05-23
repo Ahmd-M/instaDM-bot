@@ -1,6 +1,4 @@
-import schedule
 from selenium import webdriver
-import os
 import time
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -78,7 +76,7 @@ class bot:
             #Clicking on message area
             send = self.wait_driver("xpath",'//*[@id="react-root"]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea',20)
 
-            #Typinig the message
+            #Typing the message
             send.send_keys(self.message)
             time.sleep(1)
   
