@@ -6,14 +6,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.common.keys import Keys
-#from webdriver_manager.chrome import ChromeDriverManager
-from loginInfo import myUser, myPassword
+#from loginInfo import myUser, myPassword
 
+#Your Login Information
+myUser = ''
+myPasword =  ''
 
-
-PATH = 'C:\Program Files (x86)\chromedriver.exe'
+PATH = '' #Path for your "chromedriver.exe" file
 driver = webdriver.Chrome(PATH)
-
 
 users = []    #Enter username of the message receiver
 message_ = ()  #Enter the message
@@ -64,10 +64,10 @@ class bot:
 
 
         time.sleep(2)
-        for i in self.users:
+        for user in self.users:
 
             #Entering the username
-            self.wait_driver("xpath",'/html/body/div[5]/div/div/div[2]/div[1]/div/div[2]/input',20).send_keys(i)
+            self.wait_driver("xpath",'/html/body/div[5]/div/div/div[2]/div[1]/div/div[2]/input',20).send_keys(user)
             
             #Clicking on the username
             self.wait_driver("xpath",'/html/body/div[5]/div/div/div[2]/div[2]/div/div/div[3]/button',20).click()
@@ -78,7 +78,7 @@ class bot:
             #Clicking on message area
             send = self.wait_driver("xpath",'//*[@id="react-root"]/section/div/div[2]/div/div/div[2]/div[2]/div/div[2]/div/div/div[2]/textarea',20)
 
-            #Typinig message
+            #Typinig the message
             send.send_keys(self.message)
             time.sleep(1)
   
