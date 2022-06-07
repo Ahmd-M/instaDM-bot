@@ -86,7 +86,7 @@ class bot:
             time.sleep(2)
             
             #Closing the tab
-            #self.bot.quit()
+            self.bot.quit()
   
            
   
